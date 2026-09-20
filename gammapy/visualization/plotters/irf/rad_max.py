@@ -12,9 +12,13 @@ __all__ = [
 
 
 class RadMaxPlotter(BasePlotter):
+    def __init__(self, ax=None, rc_params=None):
+        super().__init__(rc_params=rc_params)
+        self.ax = ax
+
     def plot(self, rad_max, ax=None, **kwargs):
         if ax is None:
-            ax = plt.gca()
+            ax = self.ax if self.ax is not None else plt.gca()
 
         energy_axis = rad_max.axes["energy"]
         offset_axis = rad_max.axes["offset"]

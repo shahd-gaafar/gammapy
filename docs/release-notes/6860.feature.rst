@@ -1,0 +1,1 @@
+Creating `~gammapy.irf.RadMax` plotter class.
